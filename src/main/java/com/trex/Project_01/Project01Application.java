@@ -22,8 +22,20 @@ public class Project01Application {
 
 	@GetMapping("/{name}")
 	public ResponseEntity<?> testApi(@PathVariable String name){
-		String txt = "Testing API : " + name + " GET Method Successful...!";
+
+				// 1. Get the first character and convert it to uppercase.
+		String firstLetter = name.substring(0, 1).toUpperCase();
+		
+		// 2. Get the rest of the word (from the second character onwards).
+		String restOfWord = name.substring(1);
+		
+		// 3. Combine them to get the capitalized word.
+		String capitalizedWord = firstLetter + restOfWord;
+		
+		String txt = "Testing API : " + capitalizedWord + " GET Method Successful...!";
+		
 		log.info(txt);
+		
 		return new ResponseEntity<>(txt, HttpStatus.OK);
 	}
 
