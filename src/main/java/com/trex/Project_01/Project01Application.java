@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/test")
 @Slf4j
+@EnableScheduling	
 public class Project01Application {
 
 	public static void main(String[] args) {
@@ -38,5 +39,10 @@ public class Project01Application {
 		
 		return new ResponseEntity<>(txt, HttpStatus.OK);
 	}
+
+	@Scheduled(fixedDelay = 60000) 
+    public void reportFixedDelayTask() {
+        System.out.println("The project is running at " + dateFormat.format(new Date()));
+    }
 
 }
