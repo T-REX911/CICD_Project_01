@@ -22,6 +22,8 @@ import java.util.Date;
 @EnableScheduling	
 public class Project01Application {
 
+	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+	
 	public static void main(String[] args) {
 		SpringApplication.run(Project01Application.class, args);
 	}
