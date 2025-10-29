@@ -40,7 +40,7 @@ public class Project01Application {
 		// 3. Combine them to get the capitalized word.
 		String capitalizedWord = firstLetter + restOfWord;
 		
-		String txt = "Testing API : " + capitalizedWord + " GET Method Successful...!";
+		String txt = dateFormat.format(new Date()) + " Testing API : " + capitalizedWord + " GET Method Successful...!";
 		
 		log.info(txt);
 		
